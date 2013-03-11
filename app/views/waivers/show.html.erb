@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<%= render 'waiver' %>
+<%= image_tag('signature.png') %>
+<p><%= @waiver.full_name.titleize %> | <%= @waiver.created_at.strftime('%m/%d/%y') %></p>
+
+
+
+<%= link_to 'New Waiver', waivers_path %>

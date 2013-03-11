@@ -1,0 +1,30 @@
+<%= render 'waiver' %>
+<form method="post" action="/waivers" class="sigPad">
+    <ul class="sigNav">
+      <li class="drawIt" style="display: none;"><a href="#draw-it" >Electronically Sign Waiver</a></li>
+      <li class="clearButton"><a href="#clear">Clear</a></li>
+    </ul>
+        <p class="drawItDesc">Draw your signature below</p>
+    <div class="sig sigWrapper">
+      <div class="typed"></div>
+      <canvas class="pad" width="600" height="250" style="border: dashed;"></canvas>
+      <input type="hidden" name="output" class="output">
+    </div>
+    Date: <%= DateTime.now.strftime('%m/%d/%y') %>
+  </br>
+    <label for="name">Print your name</label>
+    <input type="text" name="name" id="name" class="name" disabled="disabled">
+    <button type="submit">I accept the terms of this agreement.</button>
+  </form>
+
+
+<!-- you load jquery somewhere before jSignature ... -->
+<script>
+        $(document).ready(function() {
+      $('.sigPad').signaturePad();
+    });
+    $('canvas').bind('touchstart mouseleave', function(e) {
+      $('#name').removeAttr('disabled');
+    })
+</script>
+

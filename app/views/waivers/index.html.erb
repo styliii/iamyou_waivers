@@ -1,0 +1,7 @@
+<h1>Signed Waivers</h1>
+<%= link_to "Sign New Waiver", new_waiver_path %>
+<ul>
+<% @waivers.each do |waiver| %>
+<li><%= waiver.full_name %> | <%= waiver.created_at.strftime('%m/%d/%y') %></li>
+<% end %>
+</ul>
