@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130310212757) do
+ActiveRecord::Schema.define(:version => 20130314220702) do
 
   create_table "waivers", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.string   "json_signature"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.text     "json_signature", :limit => 255
     t.string   "full_name"
   end
 
