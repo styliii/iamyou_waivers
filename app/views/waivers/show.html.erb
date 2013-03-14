@@ -4,5 +4,7 @@
 <p><%= @waiver.full_name.titleize %> | <%= @waiver.created_at.strftime('%m/%d/%y') %></p>
 
 
-
-<%= link_to 'New Waiver', waivers_path %>
+<p>
+	<%= link_to 'New Waiver', new_waiver_path %>
+	<%= link_to 'Signed Waivers', waivers_path %>
+</p>
